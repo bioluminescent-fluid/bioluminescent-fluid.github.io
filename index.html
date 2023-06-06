@@ -138,6 +138,18 @@
 
                         </ul>
 
+                        <h4>Particle Systems and Flow Fields</h4>
+
+                        <ul>
+                            <li>
+                                Another Daniel Shiffman's video, <a href="https://www.youtube.com/watch?v=BjoM9oKOAKY&t=1391s">"Coding Challenge #24: Perlin Noise Flow Field" (YouTube)</a>
+                            </li>
+
+                            <li>
+                                And yet another Daniel Shiffman's resource: Chapter 4 of his "The Nature of Code" book, <a href="https://natureofcode.com/book/chapter-4-particle-systems/">"Particle Systems"</a>
+                            </li>
+                        </ul>
+
                         <h4>
                             Inspirational (bioluminescence)
                         </h4>
@@ -152,6 +164,35 @@
 
 
                     </p>
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Four: our strategy</h3>
+
+                <div class="wrapper-prose">
+                    <p>
+                        Going through all these references, we decided to divide our implementation into the following steps:
+                    </p>
+
+                    <ul>
+                        <li>
+                            build a classic fluid dynamics simulation with the Navier-Stokes equations for incompressible flow, resulting in a fluid velocity grid
+                        </li>
+                        
+                        <li>
+                            use this velocity grid as a vector field to move a particle system built on top of the fluid simulation, representing the bioluminescent plankton
+                        </li>
+                        
+                        <li>
+                            make the simulation interactive by allowing touching/clicking to generate new particles, and dragging to change the velocity field realistically
+                        </li>
+                        
+                        <li>
+                            parameterize the particle system to simulate the bioluminescence behavior
+                        </li>
+                    </ul>
                 </div>
 
             </section>
