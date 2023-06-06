@@ -68,6 +68,10 @@ article section {
     padding-left: 0;
 }
 
+article {
+    padding-bottom: 3rem;;
+}
+
 article h3 {
     padding-left: 8rem;
 }
@@ -156,6 +160,7 @@ ul li + li {
 
 .full-bleed-container {
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 .full-bleed-container img {
