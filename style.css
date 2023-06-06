@@ -140,6 +140,10 @@ h2 {
     grid-row: 2 / 3;
 }
 
+ul li + li {
+    margin-top: .5em;
+}
+
 .gradient-text {
     /* FROM the amazin Sarah Fossheim */
     /* https://fossheim.io/writing/posts/css-text-gradient/ */
@@ -182,10 +186,21 @@ h2 {
   }
 }
 
-@media  (max-width: 450px) {
+@media  (max-width: 645px) {
 
     h1 {
         font-size: 3rem;
     }
     
+}
+
+@media (max-width: calc(560px + 16rem) ) {
+
+    article h3, section {
+        padding-left: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 560px;
+    }
+
 }
