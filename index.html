@@ -197,6 +197,76 @@
 
             </section>
 
+            <section>
+                <h3>Five: the fluid simulation</h3>
+
+                <div class="wrapper-prose">
+
+                    <p>
+                        We based our implementation on the ones by Mike Ash and Jos Stam. We begin by considering a two-dimensional discrete representation of the fluid in a square container. The container is represented by a squared homogeneous grid, with <em>N</em> cells on each side. For each grid cell, the idea is to compute and keep track of values for two variable: density (scalar) and velocity (vector), and we assume that these values are constant within a cell.
+                    </p>
+
+                    <figure>
+                        <img src="./imgs/grid.jpg" alt="A hand drawn grid of cells, with velocity vectors plotted on it" srcset="">
+                    </figure>
+
+                    <p>
+                        The Navier-Stokes equations provide a precise description of the evolution of a velocity field over time. Since a velocity field by itself is not something visually interesting, we can make the actual fluid "visible" by modeling its particles as a density field (scalar) that evolves through the velocity vector field.
+                    </p>
+
+                    <p>
+                        This is important because we noticed that a common pattern in simulating fluids is computing some variable's value for a given cell by taking its previous value and applying some factor over the sum of the current values of its immediate neighbors, like so:
+                    </p>
+
+                    <figure>
+                        <img src="./imgs/grid-2.jpg" alt="A hand drawn grid of cells, with velocity vectors plotted on it" srcset="">
+                    </figure>
+
+                    <p>
+                        We wanted our simulation to be accessible from any device, so we chose to implement it using the Web Standards: HTML, CSS and (vanilla) Javascript. We used the HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a> for drawing. Our plan is to code everything from scratch, whenever possible, to maximize our learning!
+                    </p>
+
+                    <p>
+                        So, we started creating basic classes and methods for representing things such as vectors and vector operations, and the moved on to the simulation itself. We tried to keep everything as parameterized as possible, so that we could tinker with the key aspects of the simulation.
+                    </p>
+
+                    <p>
+                        To actually visualize the simulation, we mapped each cell to an actual square on the screen, mapping the cell's current density to the square's color's intensity. We started with a small grid (for fear of things blowing up), until we were sure that the simulation was behaving as expected. To test the simulation, we added interactivity right away: clicks for "spreading" density (that is, increasing the density's value on the clicked cell) and mouse drags for creating movement (by increasing the velocity vectors along and in the direction and intensity of the mouse's motion).
+                    </p>
+
+                    <p>
+                        After many, many errors, and after figuring out why the errors were gone but nothing was apparently happening, we finally got the simulation working for a very small grid:
+                    </p>
+
+                    <figure>
+                        <img src="./imgs/first-sim.png" alt="A hand drawn grid of cells, with velocity vectors plotted on it" srcset="">
+                    </figure>
+
+                    <P>
+                        It doesn't look exciting now, but for us it was super exciting to see something work for the first time! Below, a video of this first prototype (with a slightly larger grid).
+                    </P>
+
+                    <video controls autoplay="true" loop="true" width="100%">
+
+                        <source src="./imgs/first-video.mp4"
+                                type="video/mp4">
+                    
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
+
+                    <p>
+                        The fluid simulation results in basically a varying velocity vector field, so we wanted to visualize that field. For that, we plotted the velocity vectors for each cell, and that is what we got:
+                    </p>
+
+                    <figure>
+                        <img src="./imgs/vector-field.png" alt="A grid of cells, with velocity vectors plotted on it" srcset="">
+                    </figure>
+
+
+                </div>
+
+            </section>
+
 
 
 

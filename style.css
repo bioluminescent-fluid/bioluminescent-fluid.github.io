@@ -104,6 +104,16 @@ h2 {
     font-weight: 300;
 }
 
+.wrapper-prose figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.wrapper-prose figure img {
+    width: 100%;
+}
+
 .container-pictures-1 {
     width: 100vw;
     max-width: 1000px;
