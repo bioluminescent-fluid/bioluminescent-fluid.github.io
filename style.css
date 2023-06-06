@@ -154,6 +154,15 @@ ul li + li {
     margin-top: .5em;
 }
 
+.full-bleed-container {
+    max-width: 1000px;
+}
+
+.full-bleed-container img {
+    width: 100%;
+    object-fit: contain;
+}
+
 .gradient-text {
     /* FROM the amazin Sarah Fossheim */
     /* https://fossheim.io/writing/posts/css-text-gradient/ */
